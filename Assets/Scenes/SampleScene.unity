@@ -4445,7 +4445,7 @@ MonoBehaviour:
   kid: {fileID: 2303711601206771255, guid: 508ebb044713f45b6af48178a7d9610e, type: 3}
   numberOfGhostsToSpawn: 10
   ghostCount: 0
-  spawnRangeX: 60
+  spawnRangeX: 50
   spawnRangeY: 10
   ghostSprites:
   - {fileID: 21300000, guid: c924ce30224ef49c99f7d386c4824a69, type: 3}
