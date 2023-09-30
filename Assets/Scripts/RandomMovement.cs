@@ -13,17 +13,11 @@ public class RandomMovement : MonoBehaviour
     public Spawn spawnScript;
     public Movement playerScript;
     public LogicScript logicScript;
-
     Vector2 newPos;
-    //private SpriteRenderer _spriteRenderer;
-    //private bool _isMovingRight = false;
-    //private Rigidbody2D _rigidbody;
 
     private void Start()
     {
         SetNewPos();
-        //_spriteRenderer = GetComponent<SpriteRenderer>();
-        //_rigidbody = GetComponent<Rigidbody2D>();
         spawnScript = FindObjectOfType<Spawn>();
         playerScript = FindObjectOfType<Movement>();
         logicScript = FindObjectOfType<LogicScript>();
@@ -37,31 +31,12 @@ public class RandomMovement : MonoBehaviour
         {
             SetNewPos();
         }
-        /*Vector2 velocity = _rigidbody.velocity;
-        Debug.Log(velocity);
-
-        if (velocity.x < 0)
-        {
-            _isMovingRight = false;
-        }
-        else if (velocity.x > 0)
-        {
-            _isMovingRight = true;
-        }
-
-        FlipSprite();
-        */
     }
 
     void SetNewPos()
     {
         newPos = new Vector2(Random.Range(-max_x, max_x), Random.Range(-max_y, max_y));
     }
-
-    /*private void FlipSprite()
-    {
-        _spriteRenderer.flipX = _isMovingRight;
-    }*/
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class Movement : MonoBehaviour
 {
@@ -9,6 +12,7 @@ public class Movement : MonoBehaviour
     private bool _isMovingLeft = false;
     public int heartCount;
     public LogicScript logicScript;
+    public TextMeshProUGUI healthText;
     
     // Start is called before the first frame update
     void Start()
@@ -39,6 +43,15 @@ public class Movement : MonoBehaviour
 
         FlipPlayerSprite();
 
+        if (heartCount != 1)
+        {
+            healthText.text = heartCount.ToString() + " hearts";
+        }
+        else
+        {
+            healthText.text = heartCount.ToString() + " heart";
+        }
+        
         if (heartCount == 0)
         {
             logicScript.GameOver();

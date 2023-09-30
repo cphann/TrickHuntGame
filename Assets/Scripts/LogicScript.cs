@@ -10,7 +10,6 @@ public class LogicScript : MonoBehaviour
 {
     public int playerScore;
     public TextMeshProUGUI scoreText;
-    public TextMeshProUGUI healthText;
     public GameObject gameOverScreen;
     public GameObject youWinScreen;
     public Movement playerScript;
@@ -19,7 +18,7 @@ public class LogicScript : MonoBehaviour
     public void AddScore(int scoreToAdd)
     {
         playerScore += scoreToAdd;
-        scoreText.text = playerScore.ToString();
+        scoreText.text = playerScore.ToString() + "/20";
     }
 
     public void RestartGame()
@@ -46,15 +45,6 @@ public class LogicScript : MonoBehaviour
 
     public void Update()
     {
-        if (playerScript.heartCount != 1)
-        {
-            healthText.text = playerScript.heartCount.ToString() + " hearts";
-        }
-        else
-        {
-            healthText.text = playerScript.heartCount.ToString() + " heart";
-        }
-        
         if (playerScore == 20)
         {
             YouWin();
