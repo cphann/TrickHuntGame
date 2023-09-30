@@ -28,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2303711601206771255}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.7235906, y: 1.931247, z: 10}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalPosition: {x: 1.652, y: 3.3924, z: 10}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -125,6 +125,8 @@ MonoBehaviour:
   max_x: 40
   max_y: 10
   spawnScript: {fileID: 0}
+  playerScript: {fileID: 0}
+  logicScript: {fileID: 0}
 --- !u!61 &3082709678378477841
 BoxCollider2D:
   m_ObjectHideFlags: 0
