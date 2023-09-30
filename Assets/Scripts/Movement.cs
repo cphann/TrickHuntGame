@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    float speed = 5.0f;
-
+    public int speed;
+    private SpriteRenderer _spriteRenderer;
+    private bool _isMovingLeft = false;
+    public int heartCount;
+    public LogicScript logicScript;
+    
     // Start is called before the first frame update
     void Start()
     {
-        
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+        logicScript = FindObjectOfType<LogicScript>();
     }
 
     // Update is called once per frame
@@ -31,6 +36,13 @@ public class Movement : MonoBehaviour
         {
             MoveUpDown(true);
         }
+
+        FlipPlayerSprite();
+
+        if (heartCount == 0)
+        {
+            logicScript.GameOver();
+        }
     }
 
     void MoveLeftRight(bool left)
@@ -40,6 +52,7 @@ public class Movement : MonoBehaviour
             Vector3 pos = transform.position;
             pos = new(pos.x - speed * Time.deltaTime, pos.y, pos.z);
             transform.position = pos;
+            _isMovingLeft = true;
         }
 
         else
@@ -47,6 +60,7 @@ public class Movement : MonoBehaviour
             Vector3 pos = transform.position;
             pos = new(pos.x + speed * Time.deltaTime, pos.y, pos.z);
             transform.position = pos;
+            _isMovingLeft = false;
         }
     }
 
@@ -66,4 +80,10 @@ public class Movement : MonoBehaviour
             transform.position = pos;
         }
     }
+
+    private void FlipPlayerSprite()
+    {
+        _spriteRenderer.flipX = _isMovingLeft;
+    }
+    
 }
