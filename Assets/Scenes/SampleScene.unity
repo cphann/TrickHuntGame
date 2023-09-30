@@ -4766,7 +4766,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ghost: {fileID: 2303711601206771255, guid: 02436d476815e8645a3e1346e0eb3410, type: 3}
   kid: {fileID: 2303711601206771255, guid: 508ebb044713f45b6af48178a7d9610e, type: 3}
+<<<<<<< Updated upstream
   numberOfGhostsToSpawn: 8
+=======
+  numberOfGhostsToSpawn: 5
+>>>>>>> Stashed changes
   ghostCount: 0
   spawnRangeX: 50
   spawnRangeY: 10
