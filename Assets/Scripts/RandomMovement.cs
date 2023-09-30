@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class RandomMovement : MonoBehaviour
 {
@@ -67,7 +69,6 @@ public class RandomMovement : MonoBehaviour
             collision.gameObject.CompareTag("border"))
         {
             // Collision with an obstacle detected, set a new position
-            Debug.Log(newPos);
             SetNewPos();
         }
         else if (collision.gameObject.CompareTag("Player"))
@@ -83,6 +84,16 @@ public class RandomMovement : MonoBehaviour
                 {
                     playerScript.heartCount--;
                 }
+        }
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("ghost") || collision.gameObject.CompareTag("kid") ||
+            collision.gameObject.CompareTag("border"))
+        {
+            // Collision with an obstacle detected, set a new position
+            SetNewPos();
         }
     }
 }

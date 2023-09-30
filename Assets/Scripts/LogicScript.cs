@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,7 +22,6 @@ public class LogicScript : MonoBehaviour
 
     public void RestartGame()
     {
-        Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
@@ -35,6 +35,11 @@ public class LogicScript : MonoBehaviour
     {
         youWinScreen.SetActive(true);
         Time.timeScale = 0;
+    }
+
+    public void Start()
+    {
+        Time.timeScale = 1;
     }
 
     public void Update()
